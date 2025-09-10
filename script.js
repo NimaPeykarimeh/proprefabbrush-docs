@@ -334,5 +334,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    console.log('PrefabBrush Documentation loaded successfully!');
+    console.log('Prefab Brush Pro Documentation loaded successfully!');
 });

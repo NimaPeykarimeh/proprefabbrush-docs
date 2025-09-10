@@ -1,12 +1,12 @@
-# PrefabBrush - How to Use Guide
+# Prefab Brush Pro - How to Use Guide
 
-Welcome to PrefabBrush, a powerful Unity Editor tool for efficient prefab placement and level design. This guide will walk you through all features and help you master the tool quickly.
+Welcome to Prefab Brush Pro, a powerful Unity Editor tool for efficient prefab placement and level design. This guide will walk you through all features and help you master the tool quickly.
 
 ## 🚀 Getting Started
 
 ### Opening the Tool
 1. In Unity, go to **Tools > Peykarimeh > Prefab Brush**
-2. The PrefabBrush window will open - dock it wherever convenient in your workspace
+2. The Prefab Brush Pro window will open - dock it wherever convenient in your workspace
 
 ### Initial Setup
 Before you start painting, you need to:
@@ -22,7 +22,7 @@ Before you start painting, you need to:
 
 ## 🎨 Brush Modes
 
-PrefabBrush offers 8 distinct brush modes, each designed for specific placement needs:
+Prefab Brush Pro offers 8 distinct brush modes, each designed for specific placement needs:
 
 ### 🌱 **Spray Brush**
 *Perfect for organic, natural placement like grass, flowers, or debris*
@@ -350,7 +350,7 @@ You can select multiple prefabs for varied placement:
 
 ## 🎉 You're Ready to Create!
 
-PrefabBrush is designed to speed up your level design workflow while maintaining creative control. Start with simple brush modes and gradually explore the advanced features as you become comfortable with the tool.
+Prefab Brush Pro is designed to speed up your level design workflow while maintaining creative control. Start with simple brush modes and gradually explore the advanced features as you become comfortable with the tool.
 
 **Happy Painting! 🎨**
 
