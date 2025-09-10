@@ -181,6 +181,16 @@
                             <li><strong>Configure Ground Layer</strong>: Set which layer(s) the tool should paint on</li>
                         </ol>
                         
+                        <div class="media-placeholder media-placeholder-gif">
+                            <div class="media-placeholder-icon">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <div class="media-placeholder-title">Getting Started Demo</div>
+                            <div class="media-placeholder-description">
+                                Animated GIF showing how to open the tool window, create settings, and add your first prefabs
+                            </div>
+                        </div>
+                        
                         <div class="tip">
                             <strong>💡 Tip:</strong> Create different settings presets for different types of objects (trees, rocks, buildings) to quickly switch between workflows.
                         </div>
@@ -192,137 +202,252 @@
                     <h2><i class="fas fa-paint-brush"></i> Brush Modes</h2>
                     <p>Prefab Brush Pro offers 8 distinct brush modes, each designed for specific placement needs:</p>
 
-                    <div id="spray-brush" class="brush-mode">
-                        <h3><i class="fas fa-spray-can"></i> Spray Brush</h3>
-                        <p class="brush-subtitle"><em>Perfect for organic, natural placement like grass, flowers, or debris</em></p>
-                        <ul>
-                            <li><strong>How to Use</strong>: Click and drag to continuously paint prefabs</li>
-                            <li><strong>Best For</strong>: Vegetation, particles, scattered objects</li>
-                            <li><strong>Controls</strong>:
-                                <ul>
-                                    <li>Click + Drag: Paint continuously</li>
-                                    <li>Ctrl + Scroll: Adjust amount per spray</li>
-                                    <li>Shift + Scroll: Change brush radius</li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <div id="spray-brush" class="brush-mode brush-mode-with-media">
+                        <div class="brush-mode-content">
+                            <h3><i class="fas fa-spray-can"></i> Spray Brush</h3>
+                            <p class="brush-subtitle"><em>Perfect for organic, natural placement like grass, flowers, or debris</em></p>
+                            <ul>
+                                <li><strong>How to Use</strong>: Click and drag to continuously paint prefabs</li>
+                                <li><strong>Best For</strong>: Vegetation, particles, scattered objects</li>
+                                <li><strong>Controls</strong>:
+                                    <ul>
+                                        <li>Click + Drag: Paint continuously</li>
+                                        <li>Ctrl + Scroll: Adjust amount per spray</li>
+                                        <li>Shift + Scroll: Change brush radius</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="brush-mode-media">
+                            <div class="media-placeholder media-placeholder-gif">
+                                <div class="media-placeholder-icon">
+                                    <i class="fas fa-spray-can"></i>
+                                </div>
+                                <div class="media-placeholder-title">Spray Brush in Action</div>
+                                <div class="media-placeholder-description">
+                                    GIF demonstrating organic placement of grass and vegetation using the spray brush
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div id="single-brush" class="brush-mode">
-                        <h3><i class="fas fa-crosshairs"></i> Single Brush</h3>
-                        <p class="brush-subtitle"><em>Precise placement of individual objects</em></p>
-                        <ul>
-                            <li><strong>How to Use</strong>: Click to place exactly one prefab at cursor position</li>
-                            <li><strong>Best For</strong>: Buildings, furniture, key objects</li>
-                            <li><strong>Controls</strong>:
-                                <ul>
-                                    <li>Click: Place single object</li>
-                                    <li>Scroll: Scale preview object</li>
-                                    <li>Drag: Rotate preview object</li>
-                                    <li>Ctrl + Drag: Snap rotation to 15° intervals</li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <div id="single-brush" class="brush-mode brush-mode-with-media">
+                        <div class="brush-mode-content">
+                            <h3><i class="fas fa-crosshairs"></i> Single Brush</h3>
+                            <p class="brush-subtitle"><em>Precise placement of individual objects</em></p>
+                            <ul>
+                                <li><strong>How to Use</strong>: Click to place exactly one prefab at cursor position</li>
+                                <li><strong>Best For</strong>: Buildings, furniture, key objects</li>
+                                <li><strong>Controls</strong>:
+                                    <ul>
+                                        <li>Click: Place single object</li>
+                                        <li>Scroll: Scale preview object</li>
+                                        <li>Drag: Rotate preview object</li>
+                                        <li>Ctrl + Drag: Snap rotation to 15° intervals</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="brush-mode-media">
+                            <div class="media-placeholder media-placeholder-gif">
+                                <div class="media-placeholder-icon">
+                                    <i class="fas fa-crosshairs"></i>
+                                </div>
+                                <div class="media-placeholder-title">Single Brush Precision</div>
+                                <div class="media-placeholder-description">
+                                    GIF showing precise placement and rotation of individual objects like buildings
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div id="circle-stamp" class="brush-mode">
-                        <h3><i class="fas fa-circle"></i> Circle Stamp</h3>
-                        <p class="brush-subtitle"><em>Place multiple objects in a circular pattern</em></p>
-                        <ul>
-                            <li><strong>How to Use</strong>: Click to stamp prefabs in a circular area</li>
-                            <li><strong>Best For</strong>: Flower beds, stone circles, campfires</li>
-                            <li><strong>Controls</strong>:
-                                <ul>
-                                    <li>Click: Stamp objects in circle</li>
-                                    <li>Ctrl + Scroll: Change amount of objects</li>
-                                    <li>Shift + Scroll: Adjust circle radius</li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <div id="circle-stamp" class="brush-mode brush-mode-with-media">
+                        <div class="brush-mode-content">
+                            <h3><i class="fas fa-circle"></i> Circle Stamp</h3>
+                            <p class="brush-subtitle"><em>Place multiple objects in a circular pattern</em></p>
+                            <ul>
+                                <li><strong>How to Use</strong>: Click to stamp prefabs in a circular area</li>
+                                <li><strong>Best For</strong>: Flower beds, stone circles, campfires</li>
+                                <li><strong>Controls</strong>:
+                                    <ul>
+                                        <li>Click: Stamp objects in circle</li>
+                                        <li>Ctrl + Scroll: Change amount of objects</li>
+                                        <li>Shift + Scroll: Adjust circle radius</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="brush-mode-media">
+                            <div class="media-placeholder media-placeholder-gif">
+                                <div class="media-placeholder-icon">
+                                    <i class="fas fa-circle"></i>
+                                </div>
+                                <div class="media-placeholder-title">Circle Stamp Formation</div>
+                                <div class="media-placeholder-description">
+                                    GIF demonstrating circular patterns for flower beds and stone circles
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div id="square-stamp" class="brush-mode">
-                        <h3><i class="fas fa-square"></i> Square Stamp</h3>
-                        <p class="brush-subtitle"><em>Place objects in a square/grid formation</em></p>
-                        <ul>
-                            <li><strong>How to Use</strong>: Click to stamp prefabs in a square area</li>
-                            <li><strong>Best For</strong>: Building layouts, grid-based placement, organized structures</li>
-                            <li><strong>Controls</strong>: Same as Circle Stamp but creates square patterns</li>
-                        </ul>
+                    <div id="square-stamp" class="brush-mode brush-mode-with-media">
+                        <div class="brush-mode-content">
+                            <h3><i class="fas fa-square"></i> Square Stamp</h3>
+                            <p class="brush-subtitle"><em>Place objects in a square/grid formation</em></p>
+                            <ul>
+                                <li><strong>How to Use</strong>: Click to stamp prefabs in a square area</li>
+                                <li><strong>Best For</strong>: Building layouts, grid-based placement, organized structures</li>
+                                <li><strong>Controls</strong>: Same as Circle Stamp but creates square patterns</li>
+                            </ul>
+                        </div>
+                        <div class="brush-mode-media">
+                            <div class="media-placeholder media-placeholder-gif">
+                                <div class="media-placeholder-icon">
+                                    <i class="fas fa-square"></i>
+                                </div>
+                                <div class="media-placeholder-title">Square Stamp Grid</div>
+                                <div class="media-placeholder-description">
+                                    GIF showing grid-based placement for building layouts and organized structures
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div id="line-brush" class="brush-mode">
-                        <h3><i class="fas fa-minus"></i> Line Brush</h3>
-                        <p class="brush-subtitle"><em>Create perfect lines of objects</em></p>
-                        <ul>
-                            <li><strong>How to Use</strong>:
-                                <ol>
-                                    <li>Click to set start point</li>
-                                    <li>Click again to set end point and place objects along the line</li>
-                                </ol>
-                            </li>
-                            <li><strong>Best For</strong>: Fences, walls, paths, borders</li>
-                            <li><strong>Controls</strong>:
-                                <ul>
-                                    <li>Ctrl + Scroll: Adjust objects per line segment</li>
-                                    <li>ESC: Cancel line drawing</li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <div id="line-brush" class="brush-mode brush-mode-with-media">
+                        <div class="brush-mode-content">
+                            <h3><i class="fas fa-minus"></i> Line Brush</h3>
+                            <p class="brush-subtitle"><em>Create perfect lines of objects</em></p>
+                            <ul>
+                                <li><strong>How to Use</strong>:
+                                    <ol>
+                                        <li>Click to set start point</li>
+                                        <li>Click again to set end point and place objects along the line</li>
+                                    </ol>
+                                </li>
+                                <li><strong>Best For</strong>: Fences, walls, paths, borders</li>
+                                <li><strong>Controls</strong>:
+                                    <ul>
+                                        <li>Ctrl + Scroll: Adjust objects per line segment</li>
+                                        <li>ESC: Cancel line drawing</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="brush-mode-media">
+                            <div class="media-placeholder media-placeholder-gif">
+                                <div class="media-placeholder-icon">
+                                    <i class="fas fa-minus"></i>
+                                </div>
+                                <div class="media-placeholder-title">Line Brush Placement</div>
+                                <div class="media-placeholder-description">
+                                    GIF demonstrating two-click line creation for fences and walls
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div id="curve-brush" class="brush-mode">
-                        <h3><i class="fas fa-bezier-curve"></i> Curve Brush</h3>
-                        <p class="brush-subtitle"><em>Create flowing, curved arrangements</em></p>
-                        <ul>
-                            <li><strong>How to Use</strong>:
-                                <ol>
-                                    <li>Click to add control points (minimum 3 points)</li>
-                                    <li>Right-click or press Enter to finalize and place objects</li>
-                                </ol>
-                            </li>
-                            <li><strong>Best For</strong>: Winding paths, organic borders, decorative curves</li>
-                            <li><strong>Special Controls</strong>:
-                                <ul>
-                                    <li>T: Toggle spacing mode</li>
-                                    <li>+/-: Adjust curve tension</li>
-                                    <li>Enter: Finalize curve</li>
-                                    <li>ESC: Cancel curve</li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <div id="curve-brush" class="brush-mode brush-mode-with-media">
+                        <div class="brush-mode-content">
+                            <h3><i class="fas fa-bezier-curve"></i> Curve Brush</h3>
+                            <p class="brush-subtitle"><em>Create flowing, curved arrangements</em></p>
+                            <ul>
+                                <li><strong>How to Use</strong>:
+                                    <ol>
+                                        <li>Click to add control points (minimum 3 points)</li>
+                                        <li>Right-click or press Enter to finalize and place objects</li>
+                                    </ol>
+                                </li>
+                                <li><strong>Best For</strong>: Winding paths, organic borders, decorative curves</li>
+                                <li><strong>Special Controls</strong>:
+                                    <ul>
+                                        <li>T: Toggle spacing mode</li>
+                                        <li>+/-: Adjust curve tension</li>
+                                        <li>Enter: Finalize curve</li>
+                                        <li>ESC: Cancel curve</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="brush-mode-media">
+                            <div class="media-placeholder media-placeholder-gif">
+                                <div class="media-placeholder-icon">
+                                    <i class="fas fa-bezier-curve"></i>
+                                </div>
+                                <div class="media-placeholder-title">Curve Brush Drawing</div>
+                                <div class="media-placeholder-description">
+                                    GIF showing curved path creation with control points for organic layouts
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div id="erase-brush" class="brush-mode">
-                        <h3><i class="fas fa-eraser"></i> Erase Brush</h3>
-                        <p class="brush-subtitle"><em>Remove placed objects</em></p>
-                        <ul>
-                            <li><strong>How to Use</strong>: Click and drag to remove prefabs within brush radius</li>
-                            <li><strong>Best For</strong>: Cleaning up, making clearings, fine-tuning placement</li>
-                            <li><strong>Controls</strong>:
-                                <ul>
-                                    <li>Click + Drag: Remove objects in radius</li>
-                                    <li>Shift + Scroll: Adjust erase radius</li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <div id="erase-brush" class="brush-mode brush-mode-with-media">
+                        <div class="brush-mode-content">
+                            <h3><i class="fas fa-eraser"></i> Erase Brush</h3>
+                            <p class="brush-subtitle"><em>Remove placed objects</em></p>
+                            <ul>
+                                <li><strong>How to Use</strong>: Click and drag to remove prefabs within brush radius</li>
+                                <li><strong>Best For</strong>: Cleaning up, making clearings, fine-tuning placement</li>
+                                <li><strong>Controls</strong>:
+                                    <ul>
+                                        <li>Click + Drag: Remove objects in radius</li>
+                                        <li>Shift + Scroll: Adjust erase radius</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="brush-mode-media">
+                            <div class="media-placeholder media-placeholder-gif">
+                                <div class="media-placeholder-icon">
+                                    <i class="fas fa-eraser"></i>
+                                </div>
+                                <div class="media-placeholder-title">Erase Brush Cleanup</div>
+                                <div class="media-placeholder-description">
+                                    GIF demonstrating object removal and clearing areas with erase brush
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div id="move-brush" class="brush-mode">
-                        <h3><i class="fas fa-arrows-alt"></i> Move Brush</h3>
-                        <p class="brush-subtitle"><em>Relocate existing objects</em></p>
-                        <ul>
-                            <li><strong>How to Use</strong>: Click and drag to move placed prefabs</li>
-                            <li><strong>Best For</strong>: Adjusting placement, repositioning objects</li>
-                            <li><strong>Controls</strong>:
-                                <ul>
-                                    <li>Click + Drag: Move objects within radius</li>
-                                    <li>Shift + Scroll: Adjust move radius</li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <div id="move-brush" class="brush-mode brush-mode-with-media">
+                        <div class="brush-mode-content">
+                            <h3><i class="fas fa-arrows-alt"></i> Move Brush</h3>
+                            <p class="brush-subtitle"><em>Relocate existing objects</em></p>
+                            <ul>
+                                <li><strong>How to Use</strong>: Click and drag to move placed prefabs</li>
+                                <li><strong>Best For</strong>: Adjusting placement, repositioning objects</li>
+                                <li><strong>Controls</strong>:
+                                    <ul>
+                                        <li>Click + Drag: Move objects within radius</li>
+                                        <li>Shift + Scroll: Adjust move radius</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="brush-mode-media">
+                            <div class="media-placeholder media-placeholder-gif">
+                                <div class="media-placeholder-icon">
+                                    <i class="fas fa-arrows-alt"></i>
+                                </div>
+                                <div class="media-placeholder-title">Move Brush Repositioning</div>
+                                <div class="media-placeholder-description">
+                                    GIF showing object repositioning and placement adjustments using move brush
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
+
+                <!-- Brush Modes Overview Video -->
+                <div class="media-placeholder media-placeholder-video media-placeholder-large">
+                    <div class="media-placeholder-icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="media-placeholder-title">Complete Brush Modes Overview</div>
+                    <div class="media-placeholder-description">
+                        Comprehensive video tutorial showcasing all 8 brush modes in action, demonstrating real-world use cases and best practices for each tool
+                    </div>
+                </div>
 
                 <!-- Core Settings -->
                 <section id="core-settings" class="section">
@@ -357,6 +482,16 @@
                                 <li>Prevents objects from overlapping</li>
                                 <li>Higher values = more spread out placement</li>
                             </ul>
+                        </div>
+                    </div>
+
+                    <div class="media-placeholder media-placeholder-image">
+                        <div class="media-placeholder-icon">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <div class="media-placeholder-title">Core Settings Interface</div>
+                        <div class="media-placeholder-description">
+                            Screenshot of the PrefabBrush tool window showing Amount, Radius, and Min Distance settings with labels
                         </div>
                     </div>
 
@@ -414,6 +549,16 @@
                                 <li>Range: Set min/max rotation angles (0-360°)</li>
                                 <li>Great for natural variation</li>
                             </ul>
+                        </div>
+                    </div>
+
+                    <div class="media-placeholder media-placeholder-image">
+                        <div class="media-placeholder-icon">
+                            <i class="fas fa-random"></i>
+                        </div>
+                        <div class="media-placeholder-title">Randomization Before/After Comparison</div>
+                        <div class="media-placeholder-description">
+                            Split-screen image showing the same forest area with and without randomization settings (rotation, scale, height variation)
                         </div>
                     </div>
 
@@ -615,6 +760,16 @@
                             <li><strong>Fine-tune</strong>: Use Move Brush to adjust positioning</li>
                             <li><strong>Clean up</strong>: Use Erase Brush to create clearings</li>
                         </ol>
+                        
+                        <div class="media-placeholder media-placeholder-video">
+                            <div class="media-placeholder-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <div class="media-placeholder-title">Complete Forest Scene Creation</div>
+                            <div class="media-placeholder-description">
+                                Time-lapse video showing the complete process of creating a natural forest environment from empty terrain to fully detailed scene
+                            </div>
+                        </div>
                     </div>
 
                     <div class="subsection">
@@ -625,6 +780,16 @@
                             <li><strong>Connect with Lines</strong>: Add fences, walls, or paths</li>
                             <li><strong>Add Details</strong>: Spray Brush for small decorative elements</li>
                         </ol>
+                        
+                        <div class="media-placeholder media-placeholder-video">
+                            <div class="media-placeholder-icon">
+                                <i class="fas fa-city"></i>
+                            </div>
+                            <div class="media-placeholder-title">Village Layout Creation</div>
+                            <div class="media-placeholder-description">
+                                Step-by-step video demonstrating how to build a structured village layout using different brush modes
+                            </div>
+                        </div>
                     </div>
 
                     <div class="subsection">
@@ -685,6 +850,16 @@
                 <section id="use-cases" class="section">
                     <h2><i class="fas fa-bullseye"></i> Common Use Cases</h2>
 
+                    <div class="media-placeholder media-placeholder-image media-placeholder-large">
+                        <div class="media-placeholder-icon">
+                            <i class="fas fa-th-large"></i>
+                        </div>
+                        <div class="media-placeholder-title">Use Case Showcase Gallery</div>
+                        <div class="media-placeholder-description">
+                            Grid of 6-8 screenshots showing different project types: fantasy forest, modern city, desert oasis, space station, medieval village, etc.
+                        </div>
+                    </div>
+
                     <div class="subsection">
                         <h3><i class="fas fa-seedling"></i> Landscape Design</h3>
                         <ul>
@@ -718,6 +893,16 @@
                 <!-- Troubleshooting -->
                 <section id="troubleshooting" class="section">
                     <h2><i class="fas fa-exclamation-triangle"></i> Troubleshooting</h2>
+
+                    <div class="media-placeholder media-placeholder-image">
+                        <div class="media-placeholder-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="media-placeholder-title">Common Issues Visual Guide</div>
+                        <div class="media-placeholder-description">
+                            Annotated screenshots showing common problems: missing parent object warning, layer setup, slope filtering examples, and performance settings
+                        </div>
+                    </div>
 
                     <div class="subsection">
                         <h3>Objects Not Placing</h3>
