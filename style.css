@@ -315,6 +315,36 @@ h4 {
     line-height: 1.7;
 }
 
+/* Icon Styles */
+.fa, .fas, .far, .fal, .fab {
+    margin-right: 0.5rem;
+    opacity: 0.9;
+}
+
+h2 .fa, h2 .fas, h2 .far, h2 .fal, h2 .fab,
+h3 .fa, h3 .fas, h3 .far, h3 .fal, h3 .fab {
+    color: var(--text-primary);
+    margin-right: 0.75rem;
+}
+
+.nav-list .fa, .nav-list .fas, .nav-list .far, .nav-list .fal, .nav-list .fab {
+    margin-right: 0.5rem;
+    width: 16px;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.feature-icon .fa, .feature-icon .fas, .feature-icon .far, .feature-icon .fal, .feature-icon .fab {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-right: 0;
+}
+
+.benefits-highlight .fa, .benefits-highlight .fas, .benefits-highlight .far, .benefits-highlight .fal, .benefits-highlight .fab {
+    margin-right: 0.25rem;
+    opacity: 1;
+}
+
 /* Sections */
 .section {
     margin-bottom: 3rem;

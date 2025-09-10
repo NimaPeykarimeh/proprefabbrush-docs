@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add print button functionality
     function addPrintButton() {
         const printButton = document.createElement('button');
-        printButton.innerHTML = '🖨️ Print Documentation';
+        printButton.innerHTML = '<i class="fas fa-print"></i> Print Documentation';
         printButton.className = 'print-button';
         
         printButton.addEventListener('click', function() {
@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add back to top functionality
     function addBackToTopButton() {
         const backToTopButton = document.createElement('button');
-        backToTopButton.innerHTML = '↑';
+        backToTopButton.innerHTML = '<i class="fas fa-chevron-up"></i>';
         backToTopButton.className = 'back-to-top-button';
         
         backToTopButton.addEventListener('click', function() {
