@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrefabBrush - Unity Editor Tool Documentation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">PrefabBrush</h1>
+            <p class="tagline">Unity Editor Tool for Efficient Prefab Placement</p>
+        </div>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <div class="container">
+            <input type="text" id="search-input" placeholder="Search documentation..." autocomplete="off">
+            <div id="search-results" class="search-results"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="nav-header">
+                <h3>Table of Contents</h3>
+            </div>
+            <ul class="nav-list">
+                <li><a href="#getting-started">🚀 Getting Started</a></li>
+                <li><a href="#brush-modes">🎨 Brush Modes</a>
+                    <ul class="nav-sublist">
+                        <li><a href="#spray-brush">Spray Brush</a></li>
+                        <li><a href="#single-brush">Single Brush</a></li>
+                        <li><a href="#circle-stamp">Circle Stamp</a></li>
+                        <li><a href="#square-stamp">Square Stamp</a></li>
+                        <li><a href="#line-brush">Line Brush</a></li>
+                        <li><a href="#curve-brush">Curve Brush</a></li>
+                        <li><a href="#erase-brush">Erase Brush</a></li>
+                        <li><a href="#move-brush">Move Brush</a></li>
+                    </ul>
+                </li>
+                <li><a href="#core-settings">⚙️ Core Settings</a></li>
+                <li><a href="#randomization">🎲 Randomization</a></li>
+                <li><a href="#advanced-features">🔧 Advanced Features</a></li>
+                <li><a href="#shortcuts">⌨️ Shortcuts</a></li>
+                <li><a href="#workflow-tips">🎮 Workflow Tips</a></li>
+                <li><a href="#settings-management">🛠️ Settings Management</a></li>
+                <li><a href="#use-cases">🎯 Use Cases</a></li>
+                <li><a href="#troubleshooting">❗ Troubleshooting</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="content">
+            <div class="content-inner">
+                <!-- Introduction -->
+                <section class="intro">
+                    <h1>PrefabBrush - How to Use Guide</h1>
+                    <p class="lead">Welcome to PrefabBrush, a powerful Unity Editor tool for efficient prefab placement and level design. This guide will walk you through all features and help you master the tool quickly.</p>
+                </section>
+
+                <!-- Getting Started -->
+                <section id="getting-started" class="section">
+                    <h2>🚀 Getting Started</h2>
+                    
+                    <div class="subsection">
+                        <h3>Opening the Tool</h3>
+                        <ol>
+                            <li>In Unity, go to <strong>Tools > Peykarimeh > Prefab Brush</strong></li>
+                            <li>The PrefabBrush window will open - dock it wherever convenient in your workspace</li>
+                        </ol>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Initial Setup</h3>
+                        <p>Before you start painting, you need to:</p>
+                        <ol>
+                            <li><strong>Create or Select Settings</strong>: Choose a settings preset from the dropdown at the top</li>
+                            <li><strong>Add Prefabs</strong>: Drag prefabs from your Project window into the prefab list</li>
+                            <li><strong>Set Parent Object</strong>: Assign a Transform as the parent for all placed objects</li>
+                            <li><strong>Configure Ground Layer</strong>: Set which layer(s) the tool should paint on</li>
+                        </ol>
+                        
+                        <div class="tip">
+                            <strong>💡 Tip:</strong> Create different settings presets for different types of objects (trees, rocks, buildings) to quickly switch between workflows.
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Brush Modes -->
+                <section id="brush-modes" class="section">
+                    <h2>🎨 Brush Modes</h2>
+                    <p>PrefabBrush offers 8 distinct brush modes, each designed for specific placement needs:</p>
+
+                    <div id="spray-brush" class="brush-mode">
+                        <h3>🌱 Spray Brush</h3>
+                        <p class="brush-subtitle"><em>Perfect for organic, natural placement like grass, flowers, or debris</em></p>
+                        <ul>
+                            <li><strong>How to Use</strong>: Click and drag to continuously paint prefabs</li>
+                            <li><strong>Best For</strong>: Vegetation, particles, scattered objects</li>
+                            <li><strong>Controls</strong>:
+                                <ul>
+                                    <li>Click + Drag: Paint continuously</li>
+                                    <li>Ctrl + Scroll: Adjust amount per spray</li>
+                                    <li>Shift + Scroll: Change brush radius</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="single-brush" class="brush-mode">
+                        <h3>📍 Single Brush</h3>
+                        <p class="brush-subtitle"><em>Precise placement of individual objects</em></p>
+                        <ul>
+                            <li><strong>How to Use</strong>: Click to place exactly one prefab at cursor position</li>
+                            <li><strong>Best For</strong>: Buildings, furniture, key objects</li>
+                            <li><strong>Controls</strong>:
+                                <ul>
+                                    <li>Click: Place single object</li>
+                                    <li>Scroll: Scale preview object</li>
+                                    <li>Drag: Rotate preview object</li>
+                                    <li>Ctrl + Drag: Snap rotation to 15° intervals</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="circle-stamp" class="brush-mode">
+                        <h3>⭕ Circle Stamp</h3>
+                        <p class="brush-subtitle"><em>Place multiple objects in a circular pattern</em></p>
+                        <ul>
+                            <li><strong>How to Use</strong>: Click to stamp prefabs in a circular area</li>
+                            <li><strong>Best For</strong>: Flower beds, stone circles, campfires</li>
+                            <li><strong>Controls</strong>:
+                                <ul>
+                                    <li>Click: Stamp objects in circle</li>
+                                    <li>Ctrl + Scroll: Change amount of objects</li>
+                                    <li>Shift + Scroll: Adjust circle radius</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="square-stamp" class="brush-mode">
+                        <h3>⬜ Square Stamp</h3>
+                        <p class="brush-subtitle"><em>Place objects in a square/grid formation</em></p>
+                        <ul>
+                            <li><strong>How to Use</strong>: Click to stamp prefabs in a square area</li>
+                            <li><strong>Best For</strong>: Building layouts, grid-based placement, organized structures</li>
+                            <li><strong>Controls</strong>: Same as Circle Stamp but creates square patterns</li>
+                        </ul>
+                    </div>
+
+                    <div id="line-brush" class="brush-mode">
+                        <h3>📏 Line Brush</h3>
+                        <p class="brush-subtitle"><em>Create perfect lines of objects</em></p>
+                        <ul>
+                            <li><strong>How to Use</strong>:
+                                <ol>
+                                    <li>Click to set start point</li>
+                                    <li>Click again to set end point and place objects along the line</li>
+                                </ol>
+                            </li>
+                            <li><strong>Best For</strong>: Fences, walls, paths, borders</li>
+                            <li><strong>Controls</strong>:
+                                <ul>
+                                    <li>Ctrl + Scroll: Adjust objects per line segment</li>
+                                    <li>ESC: Cancel line drawing</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="curve-brush" class="brush-mode">
+                        <h3>🌊 Curve Brush</h3>
+                        <p class="brush-subtitle"><em>Create flowing, curved arrangements</em></p>
+                        <ul>
+                            <li><strong>How to Use</strong>:
+                                <ol>
+                                    <li>Click to add control points (minimum 3 points)</li>
+                                    <li>Right-click or press Enter to finalize and place objects</li>
+                                </ol>
+                            </li>
+                            <li><strong>Best For</strong>: Winding paths, organic borders, decorative curves</li>
+                            <li><strong>Special Controls</strong>:
+                                <ul>
+                                    <li>T: Toggle spacing mode</li>
+                                    <li>+/-: Adjust curve tension</li>
+                                    <li>Enter: Finalize curve</li>
+                                    <li>ESC: Cancel curve</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="erase-brush" class="brush-mode">
+                        <h3>🗑️ Erase Brush</h3>
+                        <p class="brush-subtitle"><em>Remove placed objects</em></p>
+                        <ul>
+                            <li><strong>How to Use</strong>: Click and drag to remove prefabs within brush radius</li>
+                            <li><strong>Best For</strong>: Cleaning up, making clearings, fine-tuning placement</li>
+                            <li><strong>Controls</strong>:
+                                <ul>
+                                    <li>Click + Drag: Remove objects in radius</li>
+                                    <li>Shift + Scroll: Adjust erase radius</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="move-brush" class="brush-mode">
+                        <h3>✋ Move Brush</h3>
+                        <p class="brush-subtitle"><em>Relocate existing objects</em></p>
+                        <ul>
+                            <li><strong>How to Use</strong>: Click and drag to move placed prefabs</li>
+                            <li><strong>Best For</strong>: Adjusting placement, repositioning objects</li>
+                            <li><strong>Controls</strong>:
+                                <ul>
+                                    <li>Click + Drag: Move objects within radius</li>
+                                    <li>Shift + Scroll: Adjust move radius</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Core Settings -->
+                <section id="core-settings" class="section">
+                    <h2>⚙️ Core Settings</h2>
+                    
+                    <div class="subsection">
+                        <h3>🎯 Basic Parameters</h3>
+                        
+                        <div class="setting-item">
+                            <h4>Amount</h4>
+                            <p>Number of objects to place per brush stroke</p>
+                            <ul>
+                                <li>Spray: Objects per spray burst</li>
+                                <li>Stamps: Total objects in stamp pattern</li>
+                                <li>Line/Curve: Objects along path</li>
+                            </ul>
+                        </div>
+
+                        <div class="setting-item">
+                            <h4>Radius</h4>
+                            <p>Size of the brush area</p>
+                            <ul>
+                                <li>Controls spread area for most brushes</li>
+                                <li>Affects erase/move area for utility brushes</li>
+                            </ul>
+                        </div>
+
+                        <div class="setting-item">
+                            <h4>Min Distance</h4>
+                            <p>Minimum spacing between placed objects</p>
+                            <ul>
+                                <li>Prevents objects from overlapping</li>
+                                <li>Higher values = more spread out placement</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>🏗️ Placement Settings</h3>
+
+                        <div class="setting-item">
+                            <h4>Parent Object</h4>
+                            <p>Transform that will contain all placed objects</p>
+                            <ul>
+                                <li>Keeps your scene organized</li>
+                                <li>Easy to select/move/delete groups of objects</li>
+                                <li class="warning">⚠️ <strong>Required</strong> - tool will warn if not set</li>
+                            </ul>
+                        </div>
+
+                        <div class="setting-item">
+                            <h4>Parenting Mode</h4>
+                            <ul>
+                                <li><strong>Static Parent</strong>: Uses manually assigned parent object</li>
+                                <li><strong>Hit Object Parent</strong>: Auto-parents to the object you paint on</li>
+                            </ul>
+                        </div>
+
+                        <div class="setting-item">
+                            <h4>Ground Layer</h4>
+                            <p>Which layer(s) to paint on</p>
+                            <ul>
+                                <li>Set to specific terrain/ground layers</li>
+                                <li>Or use "All Colliders" mode to paint on any surface</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Randomization -->
+                <section id="randomization" class="section">
+                    <h2>🎲 Randomization & Variation</h2>
+
+                    <div class="subsection">
+                        <h3>🔄 Rotation Options</h3>
+                        
+                        <div class="setting-item">
+                            <h4>Align to Surface Normal</h4>
+                            <ul>
+                                <li><strong>ON</strong>: Objects tilt to match surface angle (rocks on slopes)</li>
+                                <li><strong>OFF</strong>: Objects stay upright (trees, buildings)</li>
+                            </ul>
+                        </div>
+
+                        <div class="setting-item">
+                            <h4>Random Rotation</h4>
+                            <ul>
+                                <li>Toggle: Enable/disable random Y-axis rotation</li>
+                                <li>Range: Set min/max rotation angles (0-360°)</li>
+                                <li>Great for natural variation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>📏 Scale Variation</h3>
+                        
+                        <div class="setting-item">
+                            <h4>Random Scale</h4>
+                            <ul>
+                                <li>Toggle: Enable scale randomization</li>
+                                <li>Range: Set min/max scale multipliers (0.1x to 5x)</li>
+                                <li>Creates size variety for organic looks</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>📐 Height Control</h3>
+                        
+                        <div class="setting-item">
+                            <h4>Height Offset</h4>
+                            <p>Fixed vertical offset for all objects</p>
+                        </div>
+
+                        <div class="setting-item">
+                            <h4>Random Height</h4>
+                            <ul>
+                                <li>Toggle: Enable random height variation</li>
+                                <li>Range: Set min/max height offset values</li>
+                                <li>Perfect for uneven terrain adaptation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>⛰️ Slope Filtering</h3>
+                        
+                        <div class="setting-item">
+                            <h4>Slope Filter</h4>
+                            <ul>
+                                <li>Toggle: Enable slope-based placement restrictions</li>
+                                <li>Range: Set valid slope angles (0-90 degrees)</li>
+                                <li>Prevents placing objects on too-steep surfaces</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Advanced Features -->
+                <section id="advanced-features" class="section">
+                    <h2>🔧 Advanced Features</h2>
+
+                    <div class="subsection">
+                        <h3>👁️ Preview Modes</h3>
+                        
+                        <div class="setting-item">
+                            <h4>Live Preview</h4>
+                            <p>See actual prefab meshes during placement</p>
+                            <ul>
+                                <li>More accurate but potentially slower</li>
+                                <li>Great for precise positioning</li>
+                            </ul>
+                        </div>
+
+                        <div class="setting-item">
+                            <h4>Simple Preview</h4>
+                            <p>Show colored spheres with labels</p>
+                            <ul>
+                                <li>Faster performance</li>
+                                <li>Good for general layout work</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>🌍 Surface Modes</h3>
+                        
+                        <div class="setting-item">
+                            <h4>Top-Down Mode</h4>
+                            <ul>
+                                <li>Rays cast straight down from above</li>
+                                <li>Best for terrain/landscape work</li>
+                                <li>Objects placed on surface tops</li>
+                            </ul>
+                        </div>
+
+                        <div class="setting-item">
+                            <h4>Surface-Aware Mode</h4>
+                            <ul>
+                                <li>Rays cast along surface normals</li>
+                                <li>Better for complex geometry</li>
+                                <li>Objects follow surface contours</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>🔗 Multi-Selection</h3>
+                        <p>You can select multiple prefabs for varied placement:</p>
+                        <ol>
+                            <li><strong>Ctrl + Click</strong>: Add/remove prefabs from selection</li>
+                            <li><strong>Weight System</strong>: Assign different spawn probabilities</li>
+                            <li><strong>Mixed Placement</strong>: Tool randomly chooses from selected prefabs</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <!-- Shortcuts -->
+                <section id="shortcuts" class="section">
+                    <h2>⌨️ Keyboard Shortcuts</h2>
+
+                    <div class="subsection">
+                        <h3>Universal Controls</h3>
+                        <div class="shortcuts-grid">
+                            <div class="shortcut-item">
+                                <kbd>ESC</kbd>
+                                <span>Cancel current operation</span>
+                            </div>
+                            <div class="shortcut-item">
+                                <kbd>Ctrl + Scroll</kbd>
+                                <span>Change Amount</span>
+                            </div>
+                            <div class="shortcut-item">
+                                <kbd>Shift + Scroll</kbd>
+                                <span>Change Radius</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Brush-Specific Shortcuts</h3>
+                        
+                        <div class="brush-shortcuts">
+                            <h4>Single Brush</h4>
+                            <div class="shortcuts-grid">
+                                <div class="shortcut-item">
+                                    <kbd>Scroll</kbd>
+                                    <span>Scale preview object</span>
+                                </div>
+                                <div class="shortcut-item">
+                                    <kbd>Drag</kbd>
+                                    <span>Rotate preview object</span>
+                                </div>
+                                <div class="shortcut-item">
+                                    <kbd>Ctrl + Drag</kbd>
+                                    <span>Snap rotation to 15° intervals</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="brush-shortcuts">
+                            <h4>Line Brush</h4>
+                            <div class="shortcuts-grid">
+                                <div class="shortcut-item">
+                                    <kbd>Click</kbd>
+                                    <span>Set start/end points</span>
+                                </div>
+                                <div class="shortcut-item">
+                                    <kbd>ESC</kbd>
+                                    <span>Cancel line</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="brush-shortcuts">
+                            <h4>Curve Brush</h4>
+                            <div class="shortcuts-grid">
+                                <div class="shortcut-item">
+                                    <kbd>T</kbd>
+                                    <span>Toggle spacing mode</span>
+                                </div>
+                                <div class="shortcut-item">
+                                    <kbd>+/-</kbd>
+                                    <span>Adjust curve tension</span>
+                                </div>
+                                <div class="shortcut-item">
+                                    <kbd>Enter</kbd>
+                                    <span>Finalize curve</span>
+                                </div>
+                                <div class="shortcut-item">
+                                    <kbd>Right Click</kbd>
+                                    <span>Finish curve</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Workflow Tips -->
+                <section id="workflow-tips" class="section">
+                    <h2>🎮 Workflow Tips</h2>
+
+                    <div class="subsection">
+                        <h3>🌲 Creating Natural Environments</h3>
+                        <ol>
+                            <li><strong>Start with Terrain</strong>: Use Spray Brush for base vegetation</li>
+                            <li><strong>Add Clusters</strong>: Use Circle/Square Stamps for grouped objects</li>
+                            <li><strong>Create Paths</strong>: Use Line or Curve Brush for trails</li>
+                            <li><strong>Fine-tune</strong>: Use Move Brush to adjust positioning</li>
+                            <li><strong>Clean up</strong>: Use Erase Brush to create clearings</li>
+                        </ol>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>🏘️ Building Structured Layouts</h3>
+                        <ol>
+                            <li><strong>Plan with Single</strong>: Place key structures first</li>
+                            <li><strong>Fill with Stamps</strong>: Use Square Stamp for grid layouts</li>
+                            <li><strong>Connect with Lines</strong>: Add fences, walls, or paths</li>
+                            <li><strong>Add Details</strong>: Spray Brush for small decorative elements</li>
+                        </ol>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>⚡ Performance Optimization</h3>
+                        <ul>
+                            <li>Use <strong>Simple Preview</strong> for large-scale work</li>
+                            <li>Enable <strong>Slope Filtering</strong> to avoid invalid placements</li>
+                            <li>Set appropriate <strong>Min Distance</strong> to prevent overcrowding</li>
+                            <li>Group similar objects under organized parent objects</li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>🎨 Artistic Variation</h3>
+                        <ul>
+                            <li>Enable <strong>Random Rotation</strong> for natural looks</li>
+                            <li>Use <strong>Random Scale</strong> for organic variety</li>
+                            <li>Mix multiple prefabs with different weights</li>
+                            <li>Combine <strong>Random Height</strong> with terrain adaptation</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Settings Management -->
+                <section id="settings-management" class="section">
+                    <h2>🛠️ Settings Management</h2>
+
+                    <div class="subsection">
+                        <h3>Creating Presets</h3>
+                        <ol>
+                            <li>Configure your brush settings</li>
+                            <li>Click "Create New Settings"</li>
+                            <li>Name your preset (e.g., "Forest Trees", "Stone Walls")</li>
+                            <li>Settings are saved as ScriptableObjects in your project</li>
+                        </ol>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Switching Presets</h3>
+                        <ul>
+                            <li>Use the dropdown at the top of the tool</li>
+                            <li>Instantly switch between different workflows</li>
+                            <li>Each preset remembers all settings and prefab lists</li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Best Practices</h3>
+                        <ul>
+                            <li>Create separate presets for different object types</li>
+                            <li>Name presets clearly ("Environment_Trees", "Props_Rocks")</li>
+                            <li>Share preset files with your team for consistency</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Use Cases -->
+                <section id="use-cases" class="section">
+                    <h2>🎯 Common Use Cases</h2>
+
+                    <div class="subsection">
+                        <h3>🌿 Landscape Design</h3>
+                        <ul>
+                            <li><strong>Trees</strong>: Spray Brush + Random Scale + Random Rotation</li>
+                            <li><strong>Rocks</strong>: Circle Stamp + Slope Filtering + Height Variation</li>
+                            <li><strong>Grass Clumps</strong>: Spray Brush + Small Min Distance</li>
+                            <li><strong>Paths</strong>: Line/Curve Brush with path prefabs</li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>🏘️ Architecture & Props</h3>
+                        <ul>
+                            <li><strong>Building Placement</strong>: Single Brush for precision</li>
+                            <li><strong>Fence Lines</strong>: Line Brush with fence posts</li>
+                            <li><strong>Decorative Items</strong>: Square Stamp for organized layouts</li>
+                            <li><strong>Random Props</strong>: Spray Brush with multiple prefab selection</li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>🎮 Game Level Creation</h3>
+                        <ul>
+                            <li><strong>Collectibles</strong>: Circle Stamp for power-up clusters</li>
+                            <li><strong>Obstacles</strong>: Line Brush for barrier placement</li>
+                            <li><strong>Environmental Storytelling</strong>: Mix of all brushes for detailed scenes</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Troubleshooting -->
+                <section id="troubleshooting" class="section">
+                    <h2>❗ Troubleshooting</h2>
+
+                    <div class="subsection">
+                        <h3>Objects Not Placing</h3>
+                        <ul class="checklist">
+                            <li>✅ Check that Edit Mode is enabled</li>
+                            <li>✅ Verify Parent Object is assigned</li>
+                            <li>✅ Ensure prefabs are added to the list</li>
+                            <li>✅ Check Ground Layer settings match your terrain</li>
+                            <li>✅ Verify slope settings aren't too restrictive</li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Performance Issues</h3>
+                        <ul class="checklist">
+                            <li>🔧 Switch to Simple Preview mode</li>
+                            <li>🔧 Reduce brush radius for complex scenes</li>
+                            <li>🔧 Lower amount values for heavy prefabs</li>
+                            <li>🔧 Use appropriate Min Distance values</li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Preview Not Showing</h3>
+                        <ul class="checklist">
+                            <li>🔧 Make sure you're hovering over valid surfaces</li>
+                            <li>🔧 Check that your ground layer is set correctly</li>
+                            <li>🔧 Verify slope filtering isn't blocking placement</li>
+                            <li>🔧 Ensure prefabs are properly assigned</li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Objects Appearing in Wrong Places</h3>
+                        <ul class="checklist">
+                            <li>🔧 Check Top-Down Mode vs Surface-Aware Mode settings</li>
+                            <li>🔧 Verify Normal Alignment settings</li>
+                            <li>🔧 Adjust Height Offset if objects are floating/buried</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Conclusion -->
+                <section class="conclusion">
+                    <h2>🎉 You're Ready to Create!</h2>
+                    <p>PrefabBrush is designed to speed up your level design workflow while maintaining creative control. Start with simple brush modes and gradually explore the advanced features as you become comfortable with the tool.</p>
+                    <p class="happy-painting"><strong>Happy Painting! 🎨</strong></p>
+                    <hr>
+                    <p class="support-note"><em>For technical support or feature requests, please refer to the project documentation or contact the developer.</em></p>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 PrefabBrush - Unity Editor Tool Documentation</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
