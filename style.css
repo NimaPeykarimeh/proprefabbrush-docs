@@ -477,6 +477,23 @@ h3 .fa, h3 .fas, h3 .far, h3 .fal, h3 .fab {
     width: 100%;
 }
 
+/* GIF styling for brush modes */
+.brush-mode-gif {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--shadow-medium);
+    aspect-ratio: var(--media-aspect-ratio);
+    object-fit: cover;
+    border: 2px solid var(--border-light);
+    transition: all 0.3s ease;
+}
+
+.brush-mode-gif:hover {
+    box-shadow: 0 6px 20px var(--shadow-dark);
+    transform: translateY(-2px);
+}
+
 /* For brush modes without media, maintain original styling */
 .brush-mode:not(.brush-mode-with-media) {
     display: block;
@@ -901,6 +918,12 @@ kbd {
     
     .brush-mode-content {
         order: 1; /* Content goes above media on mobile */
+    }
+    
+    /* Mobile GIF styling */
+    .brush-mode-gif {
+        width: 100%;
+        max-width: none;
     }
 }
 
