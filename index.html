@@ -293,7 +293,7 @@
                     <div id="line-brush" class="brush-mode brush-mode-with-media">
                         <div class="brush-mode-content">
                             <h3><i class="fas fa-minus"></i> Line Brush</h3>
-                            <p class="brush-subtitle"><em>Create perfect lines of objects</em></p>
+                            <p class="brush-subtitle"><em>Create perfect lines of objects with advanced placement modes</em></p>
                             <ul>
                                 <li><strong>How to Use</strong>:
                                     <ol>
@@ -302,9 +302,16 @@
                                     </ol>
                                 </li>
                                 <li><strong>Best For</strong>: Fences, walls, paths, borders</li>
+                                <li><strong>Brush Modes</strong>:
+                                    <ul>
+                                        <li><strong>Single Mode</strong>: Places objects directly on the line with automatic or manual spacing</li>
+                                        <li><strong>Spread Mode</strong>: Creates clusters of objects around each line point using Amount, Min Distance, and Radius</li>
+                                    </ul>
+                                </li>
                                 <li><strong>Controls</strong>:
                                     <ul>
-                                        <li>Ctrl + Scroll: Adjust objects per line segment</li>
+                                        <li>Ctrl + Scroll: Adjust Point Spacing (Single Mode) or Amount (Spread Mode)</li>
+                                        <li>Shift + Scroll: Adjust Radius (Spread Mode only)</li>
                                         <li>ESC: Cancel line drawing</li>
                                     </ul>
                                 </li>
@@ -321,7 +328,7 @@
                     <div id="curve-brush" class="brush-mode brush-mode-with-media">
                         <div class="brush-mode-content">
                             <h3><i class="fas fa-bezier-curve"></i> Curve Brush</h3>
-                            <p class="brush-subtitle"><em>Create flowing, curved arrangements</em></p>
+                            <p class="brush-subtitle"><em>Create flowing, curved arrangements with advanced curve control</em></p>
                             <ul>
                                 <li><strong>How to Use</strong>:
                                     <ol>
@@ -330,12 +337,27 @@
                                     </ol>
                                 </li>
                                 <li><strong>Best For</strong>: Winding paths, organic borders, decorative curves</li>
+                                <li><strong>Brush Modes</strong>:
+                                    <ul>
+                                        <li><strong>Single Mode</strong>: Places objects directly on the curve with spacing control</li>
+                                        <li><strong>Spread Mode</strong>: Creates clusters of objects around each curve point</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Curve Settings</strong>:
+                                    <ul>
+                                        <li><strong>Distance Spacing</strong>: Objects placed based on distance intervals</li>
+                                        <li><strong>Count Spacing</strong>: Fixed number of objects distributed evenly</li>
+                                        <li><strong>Curve Tension</strong>: Controls how curvy the spline appears</li>
+                                    </ul>
+                                </li>
                                 <li><strong>Special Controls</strong>:
                                     <ul>
                                         <li>T: Toggle spacing mode</li>
                                         <li>+/-: Adjust curve tension</li>
                                         <li>Enter: Finalize curve</li>
-                                        <li>ESC: Cancel curve</li>
+                                        <li>Right-click: Finalize curve</li>
+                                        <li>Ctrl + Scroll: Adjust Point Spacing (Single Mode) or Amount (Spread Mode)</li>
+                                        <li>Shift + Scroll: Adjust Radius (Spread Mode only)</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -395,16 +417,6 @@
                     </div>
                 </section>
 
-                <!-- Brush Modes Overview Video -->
-                <div class="media-placeholder media-placeholder-video media-placeholder-large">
-                    <div class="media-placeholder-icon">
-                        <i class="fas fa-play"></i>
-                    </div>
-                    <div class="media-placeholder-title">Complete Brush Modes Overview</div>
-                    <div class="media-placeholder-description">
-                        Comprehensive video tutorial showcasing all 8 brush modes in action, demonstrating real-world use cases and best practices for each tool
-                    </div>
-                </div>
 
                 <!-- Core Settings -->
                 <section id="core-settings" class="section">
@@ -419,7 +431,8 @@
                             <ul>
                                 <li>Spray: Objects per spray burst</li>
                                 <li>Stamps: Total objects in stamp pattern</li>
-                                <li>Line/Curve: Objects along path</li>
+                                <li>Line/Curve (Spread Mode): Objects per line/curve point</li>
+                                <li>Line/Curve (Single Mode): Fixed at 1 object per placement point</li>
                             </ul>
                         </div>
 
@@ -428,6 +441,8 @@
                             <p>Size of the brush area</p>
                             <ul>
                                 <li>Controls spread area for most brushes</li>
+                                <li>Line/Curve (Spread Mode): Spread area around each point</li>
+                                <li>Line/Curve (Single Mode): Not used (precise placement)</li>
                                 <li>Affects erase/move area for utility brushes</li>
                             </ul>
                         </div>
@@ -438,19 +453,21 @@
                             <ul>
                                 <li>Prevents objects from overlapping</li>
                                 <li>Higher values = more spread out placement</li>
+                                <li>Used in Spread Mode for Line/Curve brushes</li>
+                            </ul>
+                        </div>
+
+                        <div class="setting-item">
+                            <h4>Point Spacing</h4>
+                            <p>Distance between placement points (Line/Curve brushes)</p>
+                            <ul>
+                                <li><strong>Auto Spacing</strong>: Automatically calculated based on prefab size</li>
+                                <li><strong>Manual Spacing</strong>: Set exact distance between points</li>
+                                <li>Only applies in Single Mode</li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="media-placeholder media-placeholder-image">
-                        <div class="media-placeholder-icon">
-                            <i class="fas fa-image"></i>
-                        </div>
-                        <div class="media-placeholder-title">Core Settings Interface</div>
-                        <div class="media-placeholder-description">
-                            Screenshot of the PrefabBrush tool window showing Amount, Radius, and Min Distance settings with labels
-                        </div>
-                    </div>
 
                     <div class="subsection">
                         <h3><i class="fas fa-hammer"></i> Placement Settings</h3>
@@ -509,15 +526,6 @@
                         </div>
                     </div>
 
-                    <div class="media-placeholder media-placeholder-image">
-                        <div class="media-placeholder-icon">
-                            <i class="fas fa-random"></i>
-                        </div>
-                        <div class="media-placeholder-title">Randomization Before/After Comparison</div>
-                        <div class="media-placeholder-description">
-                            Split-screen image showing the same forest area with and without randomization settings (rotation, scale, height variation)
-                        </div>
-                    </div>
 
                     <div class="subsection">
                         <h3><i class="fas fa-expand-arrows-alt"></i> Scale Variation</h3>
@@ -613,6 +621,47 @@
                     </div>
 
                     <div class="subsection">
+                        <h3><i class="fas fa-bezier-curve"></i> Line & Curve Brush Modes</h3>
+                        <p>Line and Curve brushes feature two distinct placement modes:</p>
+                        
+                        <div class="setting-item">
+                            <h4>Single Mode</h4>
+                            <p>(Default)</p>
+                            <ul>
+                                <li>Places objects directly along the line/curve path</li>
+                                <li>Uses <strong>Auto Spacing</strong> or <strong>Manual Point Spacing</strong></li>
+                                <li><strong>Auto Spacing</strong>: Automatically calculates spacing based on selected prefab size</li>
+                                <li><strong>Manual Spacing</strong>: Set exact distance between placement points</li>
+                                <li>Objects placed precisely on the path with no spreading</li>
+                            </ul>
+                        </div>
+
+                        <div class="setting-item">
+                            <h4>Spread Mode</h4>
+                            <ul>
+                                <li>Creates clusters of objects around line/curve points</li>
+                                <li>Uses <strong>Amount</strong> (objects per point), <strong>Min Distance</strong>, and <strong>Radius</strong></li>
+                                <li>Each line/curve point becomes a center for multiple object placement</li>
+                                <li>Great for creating thick borders or dense arrangements</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3><i class="fas fa-compass"></i> Direction Alignment</h3>
+                        
+                        <div class="setting-item">
+                            <h4>Align with Direction</h4>
+                            <p>Available for Line and Curve brushes</p>
+                            <ul>
+                                <li>Objects rotate to align with the line/curve direction</li>
+                                <li>Works with both world-up and surface normal alignment</li>
+                                <li>Perfect for fence posts, walls, or directional objects</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
                         <h3><i class="fas fa-layer-group"></i> Multi-Selection</h3>
                         <p>You can select multiple prefabs for varied placement:</p>
                         <ol>
@@ -674,6 +723,14 @@
                                     <span>Set start/end points</span>
                                 </div>
                                 <div class="shortcut-item">
+                                    <kbd>Ctrl + Scroll</kbd>
+                                    <span>Adjust Point Spacing (Single Mode) or Amount (Spread Mode)</span>
+                                </div>
+                                <div class="shortcut-item">
+                                    <kbd>Shift + Scroll</kbd>
+                                    <span>Adjust Radius (Spread Mode only)</span>
+                                </div>
+                                <div class="shortcut-item">
                                     <kbd>ESC</kbd>
                                     <span>Cancel line</span>
                                 </div>
@@ -697,7 +754,15 @@
                                 </div>
                                 <div class="shortcut-item">
                                     <kbd>Right Click</kbd>
-                                    <span>Finish curve</span>
+                                    <span>Finalize curve</span>
+                                </div>
+                                <div class="shortcut-item">
+                                    <kbd>Ctrl + Scroll</kbd>
+                                    <span>Adjust Point Spacing (Single Mode) or Amount (Spread Mode)</span>
+                                </div>
+                                <div class="shortcut-item">
+                                    <kbd>Shift + Scroll</kbd>
+                                    <span>Adjust Radius (Spread Mode only)</span>
                                 </div>
                             </div>
                         </div>
@@ -718,15 +783,7 @@
                             <li><strong>Clean up</strong>: Use Erase Brush to create clearings</li>
                         </ol>
                         
-                        <div class="media-placeholder media-placeholder-video">
-                            <div class="media-placeholder-icon">
-                                <i class="fas fa-seedling"></i>
-                            </div>
-                            <div class="media-placeholder-title">Complete Forest Scene Creation</div>
-                            <div class="media-placeholder-description">
-                                Time-lapse video showing the complete process of creating a natural forest environment from empty terrain to fully detailed scene
-                            </div>
-                        </div>
+
                     </div>
 
                     <div class="subsection">
@@ -734,19 +791,16 @@
                         <ol>
                             <li><strong>Plan with Single</strong>: Place key structures first</li>
                             <li><strong>Fill with Stamps</strong>: Use Square Stamp for grid layouts</li>
-                            <li><strong>Connect with Lines</strong>: Add fences, walls, or paths</li>
+                            <li><strong>Connect with Lines</strong>: 
+                                <ul>
+                                    <li><strong>Single Mode</strong>: Perfect straight walls, fences with auto-spacing</li>
+                                    <li><strong>Spread Mode</strong>: Dense hedgerows or thick barriers</li>
+                                </ul>
+                            </li>
                             <li><strong>Add Details</strong>: Spray Brush for small decorative elements</li>
                         </ol>
                         
-                        <div class="media-placeholder media-placeholder-video">
-                            <div class="media-placeholder-icon">
-                                <i class="fas fa-city"></i>
-                            </div>
-                            <div class="media-placeholder-title">Village Layout Creation</div>
-                            <div class="media-placeholder-description">
-                                Step-by-step video demonstrating how to build a structured village layout using different brush modes
-                            </div>
-                        </div>
+
                     </div>
 
                     <div class="subsection">
@@ -807,15 +861,6 @@
                 <section id="use-cases" class="section">
                     <h2><i class="fas fa-bullseye"></i> Common Use Cases</h2>
 
-                    <div class="media-placeholder media-placeholder-image media-placeholder-large">
-                        <div class="media-placeholder-icon">
-                            <i class="fas fa-th-large"></i>
-                        </div>
-                        <div class="media-placeholder-title">Use Case Showcase Gallery</div>
-                        <div class="media-placeholder-description">
-                            Grid of 6-8 screenshots showing different project types: fantasy forest, modern city, desert oasis, space station, medieval village, etc.
-                        </div>
-                    </div>
 
                     <div class="subsection">
                         <h3><i class="fas fa-seedling"></i> Landscape Design</h3>
@@ -831,7 +876,8 @@
                         <h3><i class="fas fa-building"></i> Architecture & Props</h3>
                         <ul>
                             <li><strong>Building Placement</strong>: Single Brush for precision</li>
-                            <li><strong>Fence Lines</strong>: Line Brush with fence posts</li>
+                            <li><strong>Fence Lines</strong>: Line Brush (Single Mode) with Direction Alignment enabled</li>
+                            <li><strong>Wall Segments</strong>: Line Brush (Spread Mode) for thick walls</li>
                             <li><strong>Decorative Items</strong>: Square Stamp for organized layouts</li>
                             <li><strong>Random Props</strong>: Spray Brush with multiple prefab selection</li>
                         </ul>
@@ -851,15 +897,7 @@
                 <section id="troubleshooting" class="section">
                     <h2><i class="fas fa-exclamation-triangle"></i> Troubleshooting</h2>
 
-                    <div class="media-placeholder media-placeholder-image">
-                        <div class="media-placeholder-icon">
-                            <i class="fas fa-question-circle"></i>
-                        </div>
-                        <div class="media-placeholder-title">Common Issues Visual Guide</div>
-                        <div class="media-placeholder-description">
-                            Annotated screenshots showing common problems: missing parent object warning, layer setup, slope filtering examples, and performance settings
-                        </div>
-                    </div>
+
 
                     <div class="subsection">
                         <h3>Objects Not Placing</h3>
@@ -869,6 +907,16 @@
                             <li>✅ Ensure prefabs are added to the list</li>
                             <li>✅ Check Ground Layer settings match your terrain</li>
                             <li>✅ Verify slope settings aren't too restrictive</li>
+                            <li>✅ For Line/Curve brushes, check brush mode matches your needs</li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Auto Spacing Issues</h3>
+                        <ul class="checklist">
+                            <li>🔧 If spacing seems too large/small, switch to Manual Point Spacing</li>
+                            <li>🔧 Auto Spacing is based on largest selected prefab dimension</li>
+                            <li>🔧 For mixed prefab sizes, consider using Manual Spacing</li>
                         </ul>
                     </div>
 

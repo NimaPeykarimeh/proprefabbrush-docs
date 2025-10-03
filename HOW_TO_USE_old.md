@@ -1,15 +1,12 @@
-# PrefabBrush - How to Use Guide
+# Prefab Brush Pro - How to Use Guide
 
-Welcome to PrefabBrush, a powerful Unity Editor tool for efficient prefab placement and level design. This guide will walk you through all features and help you master the tool quickly.
-
-📖 **Online Documentation**: [Online Documentation](https://nimapeykarimeh.github.io/proprefabbrush-docs/)
-
+Welcome to Prefab Brush Pro, a powerful Unity Editor tool for efficient prefab placement and level design. This guide will walk you through all features and help you master the tool quickly.
 
 ## 🚀 Getting Started
 
 ### Opening the Tool
 1. In Unity, go to **Tools > Peykarimeh > Prefab Brush**
-2. The PrefabBrush window will open - dock it wherever convenient in your workspace
+2. The Prefab Brush Pro window will open - dock it wherever convenient in your workspace
 
 ### Initial Setup
 Before you start painting, you need to:
@@ -25,7 +22,7 @@ Before you start painting, you need to:
 
 ## 🎨 Brush Modes
 
-PrefabBrush offers 8 distinct brush modes, each designed for specific placement needs:
+Prefab Brush Pro offers 8 distinct brush modes, each designed for specific placement needs:
 
 ### 🌱 **Spray Brush**
 *Perfect for organic, natural placement like grass, flowers, or debris*
@@ -66,40 +63,28 @@ PrefabBrush offers 8 distinct brush modes, each designed for specific placement 
 - **Controls**: Same as Circle Stamp but creates square patterns
 
 ### 📏 **Line Brush**
-*Create perfect lines of objects with advanced placement modes*
+*Create perfect lines of objects*
 
 - **How to Use**: 
   1. Click to set start point
   2. Click again to set end point and place objects along the line
 - **Best For**: Fences, walls, paths, borders
-- **Brush Modes**:
-  - **Single Mode**: Places objects directly on the line with automatic or manual spacing
-  - **Spread Mode**: Creates clusters of objects around each line point using Amount, Min Distance, and Radius
 - **Controls**:
-  - Ctrl + Scroll: Adjust spacing (Single Mode) or amount (Spread Mode)
-  - Shift + Scroll: Adjust radius (Spread Mode only)
+  - Ctrl + Scroll: Adjust objects per line segment
   - ESC: Cancel line drawing
 
 ### 🌊 **Curve Brush**
-*Create flowing, curved arrangements with advanced curve control*
+*Create flowing, curved arrangements*
 
 - **How to Use**:
   1. Click to add control points (minimum 3 points)
   2. Right-click or press Enter to finalize and place objects
 - **Best For**: Winding paths, organic borders, decorative curves
-- **Brush Modes**:
-  - **Single Mode**: Places objects directly on the curve with spacing control
-  - **Spread Mode**: Creates clusters of objects around each curve point
-- **Curve Settings**:
-  - **Distance Spacing**: Objects placed based on distance intervals
-  - **Points per Segment**: Fixed number of objects per curve segment
-  - **Curve Tension**: Controls how curvy the spline appears
 - **Special Controls**:
   - T: Toggle spacing mode
   - +/-: Adjust curve tension
   - Enter: Finalize curve
   - ESC: Cancel curve
-  - Right-click: Finalize curve
 
 ### 🗑️ **Erase Brush**
 *Remove placed objects*
@@ -128,24 +113,15 @@ PrefabBrush offers 8 distinct brush modes, each designed for specific placement 
 **Amount**: Number of objects to place per brush stroke
 - Spray: Objects per spray burst
 - Stamps: Total objects in stamp pattern
-- Line/Curve (Spread Mode): Objects per line/curve point
-- Line/Curve (Single Mode): Fixed at 1 object per placement point
+- Line/Curve: Objects along path
 
 **Radius**: Size of the brush area
 - Controls spread area for most brushes
-- Line/Curve (Spread Mode): Spread area around each point
-- Line/Curve (Single Mode): Not used (precise placement)
 - Affects erase/move area for utility brushes
 
 **Min Distance**: Minimum spacing between placed objects
 - Prevents objects from overlapping
 - Higher values = more spread out placement
-- Used in Spread Mode for Line/Curve brushes
-
-**Point Spacing**: Distance between placement points (Line/Curve brushes)
-- **Auto Spacing**: Automatically calculated based on prefab size
-- **Manual Spacing**: Set exact distance between points
-- Only applies in Single Mode
 
 ### 🏗️ **Placement Settings**
 
@@ -204,31 +180,7 @@ PrefabBrush offers 8 distinct brush modes, each designed for specific placement 
 
 ## 🔧 Advanced Features
 
-### � **Line & Curve Brush Modes**
-
-Line and Curve brushes feature two distinct placement modes:
-
-**Single Mode** (Default):
-- Places objects directly along the line/curve path
-- Uses **Auto Spacing** or **Manual Point Spacing**
-- **Auto Spacing**: Automatically calculates spacing based on selected prefab size
-- **Manual Spacing**: Set exact distance between placement points
-- Objects placed precisely on the path with no spreading
-
-**Spread Mode**:
-- Creates clusters of objects around line/curve points
-- Uses **Amount** (objects per point), **Min Distance**, and **Radius**
-- Each line/curve point becomes a center for multiple object placement
-- Great for creating thick borders or dense arrangements
-
-### 🧭 **Direction Alignment**
-
-**Align with Direction**: Available for Line and Curve brushes
-- Objects rotate to align with the line/curve direction
-- Works with both world-up and surface normal alignment
-- Perfect for fence posts, walls, or directional objects
-
-### �👁️ **Preview Modes**
+### 👁️ **Preview Modes**
 
 **Live Preview**: See actual prefab meshes during placement
 - More accurate but potentially slower
@@ -276,17 +228,13 @@ You can select multiple prefabs for varied placement:
 
 **Line Brush**:
 - **Click**: Set start/end points
-- **Ctrl + Scroll**: Adjust Point Spacing (Single Mode) or Amount (Spread Mode)
-- **Shift + Scroll**: Adjust Radius (Spread Mode only)
 - **ESC**: Cancel line
 
 **Curve Brush**:
 - **T**: Toggle spacing mode
 - **+/-**: Adjust curve tension
 - **Enter**: Finalize curve
-- **Right Click**: Finalize curve
-- **Ctrl + Scroll**: Adjust Point Spacing (Single Mode) or Amount (Spread Mode)
-- **Shift + Scroll**: Adjust Radius (Spread Mode only)
+- **Right Click**: Finish curve
 
 **Spray/Stamp Brushes**:
 - **Ctrl + Scroll**: Change amount
@@ -312,9 +260,7 @@ You can select multiple prefabs for varied placement:
 
 1. **Plan with Single**: Place key structures first
 2. **Fill with Stamps**: Use Square Stamp for grid layouts
-3. **Connect with Lines**: 
-   - **Single Mode**: Perfect straight walls, fences with auto-spacing
-   - **Spread Mode**: Dense hedgerows or thick barriers
+3. **Connect with Lines**: Add fences, walls, or paths
 4. **Add Details**: Spray Brush for small decorative elements
 
 ### ⚡ **Performance Optimization**
@@ -363,8 +309,7 @@ You can select multiple prefabs for varied placement:
 
 ### 🏘️ **Architecture & Props**
 - **Building Placement**: Single Brush for precision
-- **Fence Lines**: Line Brush (Single Mode) with Direction Alignment enabled
-- **Wall Segments**: Line Brush (Spread Mode) for thick walls
+- **Fence Lines**: Line Brush with fence posts
 - **Decorative Items**: Square Stamp for organized layouts
 - **Random Props**: Spray Brush with multiple prefab selection
 
@@ -383,12 +328,6 @@ You can select multiple prefabs for varied placement:
 - ✅ Ensure prefabs are added to the list
 - ✅ Check Ground Layer settings match your terrain
 - ✅ Verify slope settings aren't too restrictive
-- ✅ For Line/Curve brushes, check brush mode matches your needs
-
-### Auto Spacing Issues
-- 🔧 If spacing seems too large/small, switch to Manual Point Spacing
-- 🔧 Auto Spacing is based on largest selected prefab dimension
-- 🔧 For mixed prefab sizes, consider using Manual Spacing
 
 ### Performance Issues
 - 🔧 Switch to Simple Preview mode
@@ -411,7 +350,7 @@ You can select multiple prefabs for varied placement:
 
 ## 🎉 You're Ready to Create!
 
-PrefabBrush is designed to speed up your level design workflow while maintaining creative control. Start with simple brush modes and gradually explore the advanced features as you become comfortable with the tool.
+Prefab Brush Pro is designed to speed up your level design workflow while maintaining creative control. Start with simple brush modes and gradually explore the advanced features as you become comfortable with the tool.
 
 **Happy Painting! 🎨**
 
