@@ -47,6 +47,7 @@
                         <li><a href="#curve-brush">Curve Brush</a></li>
                         <li><a href="#erase-brush">Erase Brush</a></li>
                         <li><a href="#move-brush">Move Brush</a></li>
+                        <li><a href="#modify-brush">Modify Brush</a></li>
                     </ul>
                 </li>
                 <li><a href="#core-settings"><i class="fas fa-cog"></i> Core Settings</a></li>
@@ -77,7 +78,7 @@
                     <div class="features-grid">
                         <div class="feature-card">
                             <div class="feature-icon"><i class="fas fa-paint-brush"></i></div>
-                            <h3>8 Specialized Brush Modes</h3>
+                            <h3>9 Specialized Brush Modes</h3>
                             <p>From precise single placement to organic spray patterns, curved paths, and geometric stamps - every placement need is covered.</p>
                             <ul class="feature-list">
                                 <li><strong>Spray Brush</strong> - Natural, organic placement</li>
@@ -197,7 +198,7 @@
                 <!-- Brush Modes -->
                 <section id="brush-modes" class="section">
                     <h2><i class="fas fa-paint-brush"></i> Brush Modes</h2>
-                    <p>Prefab Brush Pro offers 8 distinct brush modes, each designed for specific placement needs:</p>
+                    <p>Prefab Brush Pro offers 9 distinct brush modes, each designed for specific placement needs:</p>
 
                     <div id="spray-brush" class="brush-mode brush-mode-with-media">
                         <div class="brush-mode-content">
@@ -415,6 +416,35 @@
                                  loading="lazy">
                         </div>
                     </div>
+
+                    <div id="modify-brush" class="brush-mode brush-mode-with-media">
+                        <div class="brush-mode-content">
+                            <h3><i class="fas fa-magic"></i> Modify Brush</h3>
+                            <p class="brush-subtitle"><em>Apply brush settings to existing objects</em></p>
+                            <ul>
+                                <li><strong>How to Use</strong>: Click and drag over objects to apply the current active settings for <strong>Random Scale</strong>, <strong>Random Rotation</strong>, <strong>Align to Normal</strong>, and <strong>Height Offset</strong></li>
+                                <li><strong>Best For</strong>: Quickly adding variation to already-placed objects, re-aligning groups of objects to the terrain, or adjusting heights</li>
+                                <li><strong>Prefab Filtering</strong>: If prefabs are selected in the tool's prefab list, this brush will <em>only</em> modify instances of those selected prefabs. If no prefabs are selected, it modifies any object</li>
+                                <li><strong>Controls</strong>:
+                                    <ul>
+                                        <li>Click + Drag: Apply modifications</li>
+                                        <li>Shift + Scroll: Adjust brush radius</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="brush-mode-media">
+                            <div class="media-placeholder media-placeholder-gif brush-mode-gif">
+                                <div class="media-placeholder-icon">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <div class="media-placeholder-title">Modify Brush Demo</div>
+                                <div class="media-placeholder-description">
+                                    Watch how to apply randomization and alignment settings to existing placed objects
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
 
@@ -443,7 +473,7 @@
                                 <li>Controls spread area for most brushes</li>
                                 <li>Line/Curve (Spread Mode): Spread area around each point</li>
                                 <li>Line/Curve (Single Mode): Not used (precise placement)</li>
-                                <li>Affects erase/move area for utility brushes</li>
+                                <li>Affects erase/move/modify area for utility brushes</li>
                             </ul>
                         </div>
 
@@ -766,6 +796,34 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="brush-shortcuts">
+                            <h4>Spray/Stamp Brushes</h4>
+                            <div class="shortcuts-grid">
+                                <div class="shortcut-item">
+                                    <kbd>Ctrl + Scroll</kbd>
+                                    <span>Change amount</span>
+                                </div>
+                                <div class="shortcut-item">
+                                    <kbd>Shift + Scroll</kbd>
+                                    <span>Change radius</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="brush-shortcuts">
+                            <h4>Erase/Move/Modify Brushes</h4>
+                            <div class="shortcuts-grid">
+                                <div class="shortcut-item">
+                                    <kbd>Shift + Scroll</kbd>
+                                    <span>Change radius</span>
+                                </div>
+                                <div class="shortcut-item">
+                                    <kbd>Click + Drag</kbd>
+                                    <span>Apply effect</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
@@ -779,7 +837,7 @@
                             <li><strong>Start with Terrain</strong>: Use Spray Brush for base vegetation</li>
                             <li><strong>Add Clusters</strong>: Use Circle/Square Stamps for grouped objects</li>
                             <li><strong>Create Paths</strong>: Use Line or Curve Brush for trails</li>
-                            <li><strong>Fine-tune</strong>: Use Move Brush to adjust positioning</li>
+                            <li><strong>Fine-tune</strong>: Use <strong>Move Brush</strong> to adjust positioning or <strong>Modify Brush</strong> to add variation</li>
                             <li><strong>Clean up</strong>: Use Erase Brush to create clearings</li>
                         </ol>
                         
@@ -797,7 +855,7 @@
                                     <li><strong>Spread Mode</strong>: Dense hedgerows or thick barriers</li>
                                 </ul>
                             </li>
-                            <li><strong>Add Details</strong>: Spray Brush for small decorative elements</li>
+                            <li><strong>Add Details</strong>: Use <strong>Modify Brush</strong> to add slight scale/rotation tweaks to break up repetition</li>
                         </ol>
                         
 
@@ -820,6 +878,7 @@
                             <li>Use <strong>Random Scale</strong> for organic variety</li>
                             <li>Mix multiple prefabs with different weights</li>
                             <li>Combine <strong>Random Height</strong> with terrain adaptation</li>
+                            <li>Use the <strong>Modify Brush</strong> to "paint" variation onto existing placements</li>
                         </ul>
                     </div>
                 </section>
@@ -869,6 +928,7 @@
                             <li><strong>Rocks</strong>: Circle Stamp + Slope Filtering + Height Variation</li>
                             <li><strong>Grass Clumps</strong>: Spray Brush + Small Min Distance</li>
                             <li><strong>Paths</strong>: Line/Curve Brush with path prefabs</li>
+                            <li><strong>Post-Placement Tweaks</strong>: <strong>Modify Brush</strong> to re-randomize a specific area</li>
                         </ul>
                     </div>
 

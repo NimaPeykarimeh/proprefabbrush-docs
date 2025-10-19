@@ -25,7 +25,7 @@ Before you start painting, you need to:
 
 ## 🎨 Brush Modes
 
-PrefabBrush offers 8 distinct brush modes, each designed for specific placement needs:
+PrefabBrush offers 9 distinct brush modes, each designed for specific placement needs:
 
 ### 🌱 **Spray Brush**
 *Perfect for organic, natural placement like grass, flowers, or debris*
@@ -119,6 +119,16 @@ PrefabBrush offers 8 distinct brush modes, each designed for specific placement 
   - Click + Drag: Move objects within radius
   - Shift + Scroll: Adjust move radius
 
+### ✨ **Modify Brush**
+*Apply brush settings (scale, rotation, alignment) to existing objects.*
+
+- **How to Use**: Click and drag over objects to apply the current active settings for **Random Scale**, **Random Rotation**, **Align to Normal**, and **Height Offset**.
+- **Best For**: Quickly adding variation to already-placed objects, re-aligning groups of objects to the terrain, or adjusting heights.
+- **Prefab Filtering**: If prefabs are selected in the tool's prefab list, this brush will *only* modify instances of those selected prefabs. If no prefabs are selected, it modifies any object.
+- **Controls**:
+  - Click + Drag: Apply modifications
+  - Shift + Scroll: Adjust brush radius
+
 ---
 
 ## ⚙️ Core Settings
@@ -135,7 +145,7 @@ PrefabBrush offers 8 distinct brush modes, each designed for specific placement 
 - Controls spread area for most brushes
 - Line/Curve (Spread Mode): Spread area around each point
 - Line/Curve (Single Mode): Not used (precise placement)
-- Affects erase/move area for utility brushes
+- Affects erase/move/modify area for utility brushes
 
 **Min Distance**: Minimum spacing between placed objects
 - Prevents objects from overlapping
@@ -204,7 +214,7 @@ PrefabBrush offers 8 distinct brush modes, each designed for specific placement 
 
 ## 🔧 Advanced Features
 
-### � **Line & Curve Brush Modes**
+###  **Line & Curve Brush Modes**
 
 Line and Curve brushes feature two distinct placement modes:
 
@@ -228,7 +238,7 @@ Line and Curve brushes feature two distinct placement modes:
 - Works with both world-up and surface normal alignment
 - Perfect for fence posts, walls, or directional objects
 
-### �👁️ **Preview Modes**
+### 👁️ **Preview Modes**
 
 **Live Preview**: See actual prefab meshes during placement
 - More accurate but potentially slower
@@ -292,7 +302,7 @@ You can select multiple prefabs for varied placement:
 - **Ctrl + Scroll**: Change amount
 - **Shift + Scroll**: Change radius
 
-**Erase/Move Brushes**:
+**Erase/Move/Modify Brushes**:
 - **Shift + Scroll**: Change radius
 - **Click + Drag**: Apply effect
 
@@ -305,7 +315,7 @@ You can select multiple prefabs for varied placement:
 1. **Start with Terrain**: Use Spray Brush for base vegetation
 2. **Add Clusters**: Use Circle/Square Stamps for grouped objects
 3. **Create Paths**: Use Line or Curve Brush for trails
-4. **Fine-tune**: Use Move Brush to adjust positioning
+4. **Fine-tune**: Use **Move Brush** to adjust positioning or **Modify Brush** to add variation.
 5. **Clean up**: Use Erase Brush to create clearings
 
 ### 🏘️ **Building Structured Layouts**
@@ -315,7 +325,7 @@ You can select multiple prefabs for varied placement:
 3. **Connect with Lines**: 
    - **Single Mode**: Perfect straight walls, fences with auto-spacing
    - **Spread Mode**: Dense hedgerows or thick barriers
-4. **Add Details**: Spray Brush for small decorative elements
+4. **Add Details**: Use **Modify Brush** to add slight scale/rotation tweaks to break up repetition.
 
 ### ⚡ **Performance Optimization**
 
@@ -330,6 +340,7 @@ You can select multiple prefabs for varied placement:
 - Use **Random Scale** for organic variety
 - Mix multiple prefabs with different weights
 - Combine **Random Height** with terrain adaptation
+- Use the **Modify Brush** to "paint" variation onto existing placements.
 
 ---
 
@@ -337,7 +348,7 @@ You can select multiple prefabs for varied placement:
 
 ### Creating Presets
 1. Configure your brush settings
-2. Click "Create New Settings" 
+2. Click "Create New Settings"
 3. Name your preset (e.g., "Forest Trees", "Stone Walls")
 4. Settings are saved as ScriptableObjects in your project
 
@@ -357,9 +368,10 @@ You can select multiple prefabs for varied placement:
 
 ### 🌿 **Landscape Design**
 - **Trees**: Spray Brush + Random Scale + Random Rotation
-- **Rocks**: Circle Stamp + Slope Filtering + Height Variation  
+- **Rocks**: Circle Stamp + Slope Filtering + Height Variation
 - **Grass Clumps**: Spray Brush + Small Min Distance
 - **Paths**: Line/Curve Brush with path prefabs
+- **Post-Placement Tweaks**: **Modify Brush** to re-randomize a specific area.
 
 ### 🏘️ **Architecture & Props**
 - **Building Placement**: Single Brush for precision
