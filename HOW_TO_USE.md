@@ -75,6 +75,10 @@ PrefabBrush offers 9 distinct brush modes, each designed for specific placement 
 - **Brush Modes**:
   - **Single Mode**: Places objects directly on the line with automatic or manual spacing
   - **Spread Mode**: Creates clusters of objects around each line point using Amount, Min Distance, and Radius
+- **Spacing Behaviour**: Objects start at the first point and step along the line at exactly your
+  Point Spacing value. The gap never stretches to force an object onto the end point - if the line
+  is not an exact multiple of the spacing, the leftover tail is simply left empty. Lengthen the
+  line and objects are added one at a time, without moving the ones already placed.
 - **Controls**:
   - Ctrl + Scroll: Adjust spacing (Single Mode) or amount (Spread Mode)
   - Shift + Scroll: Adjust radius (Spread Mode only)
@@ -84,19 +88,30 @@ PrefabBrush offers 9 distinct brush modes, each designed for specific placement 
 *Create flowing, curved arrangements with advanced curve control*
 
 - **How to Use**:
-  1. Click to add control points (minimum 3 points)
+  1. Click to add control points (minimum 2 points)
   2. Right-click or press Enter to finalize and place objects
 - **Best For**: Winding paths, organic borders, decorative curves
 - **Brush Modes**:
   - **Single Mode**: Places objects directly on the curve with spacing control
   - **Spread Mode**: Creates clusters of objects around each curve point
-- **Curve Settings**:
-  - **Distance Spacing**: Objects placed based on distance intervals
-  - **Points per Segment**: Fixed number of objects per curve segment
-  - **Curve Tension**: Controls how curvy the spline appears
+- **Spacing Mode**:
+  - **Fixed Spacing**: A constant gap between objects, measured along the whole curve and starting
+    at the first control point. The spacing does not reset or stretch where control points sit, so
+    a curve made of long and short segments is spaced evenly end to end. Any leftover tail shorter
+    than one step is left empty rather than stretching the objects already placed.
+  - **Fixed Count**: A set number of objects spread evenly over the entire curve, with the first on
+    the start point and the last on the end point.
+- **Curve Tension**: Controls the shape of the curve between your control points.
+  - `0` - Straight segments from point to point
+  - `1` - Natural curve (default)
+  - `2` - Exaggerated, wider bends
+- **Live Preview**: A dashed cyan line shows the segment following your cursor. That segment is a
+  preview only - finalizing places the curve through your clicked control points, not through the
+  cursor.
 - **Special Controls**:
   - T: Toggle spacing mode
   - +/-: Adjust curve tension
+  - Backspace / Delete: Remove the last control point
   - Enter: Finalize curve
   - ESC: Cancel curve
   - Right-click: Finalize curve
@@ -156,6 +171,9 @@ PrefabBrush offers 9 distinct brush modes, each designed for specific placement 
 - **Auto Spacing**: Automatically calculated based on prefab size
 - **Manual Spacing**: Set exact distance between points
 - Only applies in Single Mode
+- This is an exact gap, not an average - objects are stepped out from the start of the path and the
+  distance between neighbours is always the value shown
+- On the Curve brush, applies when Spacing Mode is set to **Fixed Spacing**
 
 ### 🏗️ **Placement Settings**
 
@@ -231,12 +249,35 @@ Line and Curve brushes feature two distinct placement modes:
 - Each line/curve point becomes a center for multiple object placement
 - Great for creating thick borders or dense arrangements
 
+### 📐 **How Spacing Is Measured**
+
+Both brushes step out from the **start** of the path and place an object every Point Spacing units.
+Two things follow from that, and both are deliberate:
+
+- **The gap never stretches.** The last object is not pulled onto the end point. If the path is
+  17m long and the spacing is 5m, you get 4 objects at 0m, 5m, 10m and 15m - the final 2m stays
+  empty. Extend the path and a 5th object appears without disturbing the first four.
+- **Distance is measured along the finished path, over its whole length.** On the Curve brush the
+  spacing does not restart at each control point, so a curve built from one long segment and one
+  short one is still evenly spaced from end to end.
+
+On uneven ground the path follows the surface, so a curve that climbs a hill holds more objects
+than its flat, top-down length would suggest. This is what keeps fence posts evenly spaced when
+seen on the slope itself.
+
+> 💡 **Tip**: Leave **Auto Spacing** on for tiling props like fence panels or path tiles. It uses
+> the largest dimension of your selected prefabs, so the pieces sit edge to edge with no gaps and
+> no overlap.
+
 ### 🧭 **Direction Alignment**
 
 **Align with Direction**: Available for Line and Curve brushes
 - Objects rotate to align with the line/curve direction
 - Works with both world-up and surface normal alignment
 - Perfect for fence posts, walls, or directional objects
+- On the Curve brush, the direction is taken from the path where the object actually sits, so it
+  follows the ground contour as well as the curve. A white tick on each preview point shows the
+  facing before you commit.
 
 ### 👁️ **Preview Modes**
 
@@ -291,10 +332,13 @@ You can select multiple prefabs for varied placement:
 - **ESC**: Cancel line
 
 **Curve Brush**:
-- **T**: Toggle spacing mode
+- **Click**: Add a control point
+- **T**: Toggle spacing mode (Fixed Spacing / Fixed Count)
 - **+/-**: Adjust curve tension
+- **Backspace / Delete**: Remove the last control point
 - **Enter**: Finalize curve
 - **Right Click**: Finalize curve
+- **ESC**: Cancel curve
 - **Ctrl + Scroll**: Adjust Point Spacing (Single Mode) or Amount (Spread Mode)
 - **Shift + Scroll**: Adjust Radius (Spread Mode only)
 
@@ -401,6 +445,18 @@ You can select multiple prefabs for varied placement:
 - 🔧 If spacing seems too large/small, switch to Manual Point Spacing
 - 🔧 Auto Spacing is based on largest selected prefab dimension
 - 🔧 For mixed prefab sizes, consider using Manual Spacing
+
+### Line or Curve Ends Before the Last Point
+- 🔧 This is intended. Objects are spaced exactly, so a path that is not a whole number of steps
+  long keeps its leftover tail empty instead of stretching the gaps
+- 🔧 To fill the path end to end, use the Curve brush in **Fixed Count** mode - it places the last
+  object exactly on the end point
+- 🔧 Or reduce Point Spacing slightly until the remainder disappears
+
+### Curve Looks Kinked or Loops Back on Itself
+- 🔧 Raise **Curve Tension** toward 1 for a natural curve, or lower it to 0 for straight segments
+- 🔧 Remove a bad control point with **Backspace** instead of cancelling the whole curve
+- 🔧 Control points placed very close together produce tight bends - space them further apart
 
 ### Performance Issues
 - 🔧 Switch to Simple Preview mode

@@ -309,6 +309,7 @@
                                         <li><strong>Spread Mode</strong>: Creates clusters of objects around each line point using Amount, Min Distance, and Radius</li>
                                     </ul>
                                 </li>
+                                <li><strong>Spacing Behaviour</strong>: Objects start at the first point and step along the line at exactly your Point Spacing value. The gap never stretches to force an object onto the end point. If the line is not an exact multiple of the spacing, the leftover tail is simply left empty. Lengthen the line and objects are added one at a time, without moving the ones already placed.</li>
                                 <li><strong>Controls</strong>:
                                     <ul>
                                         <li>Ctrl + Scroll: Adjust Point Spacing (Single Mode) or Amount (Spread Mode)</li>
@@ -333,7 +334,7 @@
                             <ul>
                                 <li><strong>How to Use</strong>:
                                     <ol>
-                                        <li>Click to add control points (minimum 3 points)</li>
+                                        <li>Click to add control points (minimum 2 points)</li>
                                         <li>Right-click or press Enter to finalize and place objects</li>
                                     </ol>
                                 </li>
@@ -344,17 +345,19 @@
                                         <li><strong>Spread Mode</strong>: Creates clusters of objects around each curve point</li>
                                     </ul>
                                 </li>
-                                <li><strong>Curve Settings</strong>:
+                                <li><strong>Spacing Mode</strong>:
                                     <ul>
-                                        <li><strong>Distance Spacing</strong>: Objects placed based on distance intervals</li>
-                                        <li><strong>Count Spacing</strong>: Fixed number of objects distributed evenly</li>
-                                        <li><strong>Curve Tension</strong>: Controls how curvy the spline appears</li>
+                                        <li><strong>Fixed Spacing</strong>: A constant gap between objects, measured along the whole curve and starting at the first control point. The spacing does not reset or stretch where control points sit, so a curve made of long and short segments is spaced evenly end to end.</li>
+                                        <li><strong>Fixed Count</strong>: A set number of objects spread evenly over the entire curve, with the first on the start point and the last on the end point.</li>
                                     </ul>
                                 </li>
+                                <li><strong>Curve Tension</strong>: Controls the shape of the curve between your control points: <code>0</code> for straight segments, <code>1</code> for a natural curve (default), <code>2</code> for exaggerated, wider bends.</li>
+                                <li><strong>Live Preview</strong>: A dashed cyan line shows the segment following your cursor. That segment is a preview only, so finalizing places the curve through your clicked control points, not through the cursor.</li>
                                 <li><strong>Special Controls</strong>:
                                     <ul>
                                         <li>T: Toggle spacing mode</li>
                                         <li>+/-: Adjust curve tension</li>
+                                        <li>Backspace / Delete: Remove the last control point</li>
                                         <li>Enter: Finalize curve</li>
                                         <li>Right-click: Finalize curve</li>
                                         <li>Ctrl + Scroll: Adjust Point Spacing (Single Mode) or Amount (Spread Mode)</li>
@@ -494,6 +497,8 @@
                                 <li><strong>Auto Spacing</strong>: Automatically calculated based on prefab size</li>
                                 <li><strong>Manual Spacing</strong>: Set exact distance between points</li>
                                 <li>Only applies in Single Mode</li>
+                                <li>This is an exact gap, not an average. Objects are stepped out from the start of the path and the distance between neighbours is always the value shown</li>
+                                <li>On the Curve brush, applies when Spacing Mode is set to <strong>Fixed Spacing</strong></li>
                             </ul>
                         </div>
                     </div>
@@ -678,8 +683,35 @@
                     </div>
 
                     <div class="subsection">
+                        <h3><i class="fas fa-ruler-horizontal"></i> How Spacing Is Measured</h3>
+                        <p>Both brushes step out from the <strong>start</strong> of the path and place an object every Point Spacing units. Two things follow from that, and both are deliberate:</p>
+
+                        <div class="setting-item">
+                            <h4>The gap never stretches</h4>
+                            <ul>
+                                <li>The last object is not pulled onto the end point</li>
+                                <li>A 17m path with 5m spacing gives 4 objects at 0m, 5m, 10m and 15m, and the final 2m stays empty</li>
+                                <li>Extend the path and a 5th object appears without disturbing the first four</li>
+                            </ul>
+                        </div>
+
+                        <div class="setting-item">
+                            <h4>Distance is measured along the whole path</h4>
+                            <ul>
+                                <li>On the Curve brush the spacing does not restart at each control point</li>
+                                <li>A curve built from one long segment and one short one is still evenly spaced from end to end</li>
+                                <li>On uneven ground the path follows the surface, so a curve that climbs a hill holds more objects than its flat, top-down length would suggest. This is what keeps fence posts evenly spaced when seen on the slope itself</li>
+                            </ul>
+                        </div>
+
+                        <div class="tip">
+                            <p>💡 <strong>Tip</strong>: Leave <strong>Auto Spacing</strong> on for tiling props like fence panels or path tiles. It uses the largest dimension of your selected prefabs, so the pieces sit edge to edge with no gaps and no overlap.</p>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
                         <h3><i class="fas fa-compass"></i> Direction Alignment</h3>
-                        
+
                         <div class="setting-item">
                             <h4>Align with Direction</h4>
                             <p>Available for Line and Curve brushes</p>
@@ -687,6 +719,7 @@
                                 <li>Objects rotate to align with the line/curve direction</li>
                                 <li>Works with both world-up and surface normal alignment</li>
                                 <li>Perfect for fence posts, walls, or directional objects</li>
+                                <li>On the Curve brush, the direction is taken from the path where the object actually sits, so it follows the ground contour as well as the curve. A white tick on each preview point shows the facing before you commit.</li>
                             </ul>
                         </div>
                     </div>
@@ -771,12 +804,20 @@
                             <h4>Curve Brush</h4>
                             <div class="shortcuts-grid">
                                 <div class="shortcut-item">
+                                    <kbd>Click</kbd>
+                                    <span>Add a control point</span>
+                                </div>
+                                <div class="shortcut-item">
                                     <kbd>T</kbd>
-                                    <span>Toggle spacing mode</span>
+                                    <span>Toggle spacing mode (Fixed Spacing / Fixed Count)</span>
                                 </div>
                                 <div class="shortcut-item">
                                     <kbd>+/-</kbd>
                                     <span>Adjust curve tension</span>
+                                </div>
+                                <div class="shortcut-item">
+                                    <kbd>Backspace</kbd>
+                                    <span>Remove the last control point</span>
                                 </div>
                                 <div class="shortcut-item">
                                     <kbd>Enter</kbd>
@@ -785,6 +826,10 @@
                                 <div class="shortcut-item">
                                     <kbd>Right Click</kbd>
                                     <span>Finalize curve</span>
+                                </div>
+                                <div class="shortcut-item">
+                                    <kbd>ESC</kbd>
+                                    <span>Cancel curve</span>
                                 </div>
                                 <div class="shortcut-item">
                                     <kbd>Ctrl + Scroll</kbd>
@@ -977,6 +1022,24 @@
                             <li>🔧 If spacing seems too large/small, switch to Manual Point Spacing</li>
                             <li>🔧 Auto Spacing is based on largest selected prefab dimension</li>
                             <li>🔧 For mixed prefab sizes, consider using Manual Spacing</li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Line or Curve Ends Before the Last Point</h3>
+                        <ul class="checklist">
+                            <li>🔧 This is intended. Objects are spaced exactly, so a path that is not a whole number of steps long keeps its leftover tail empty instead of stretching the gaps</li>
+                            <li>🔧 To fill the path end to end, use the Curve brush in <strong>Fixed Count</strong> mode, which places the last object exactly on the end point</li>
+                            <li>🔧 Or reduce Point Spacing slightly until the remainder disappears</li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>Curve Looks Kinked or Loops Back on Itself</h3>
+                        <ul class="checklist">
+                            <li>🔧 Raise <strong>Curve Tension</strong> toward 1 for a natural curve, or lower it to 0 for straight segments</li>
+                            <li>🔧 Remove a bad control point with <strong>Backspace</strong> instead of cancelling the whole curve</li>
+                            <li>🔧 Control points placed very close together produce tight bends, so space them further apart</li>
                         </ul>
                     </div>
 
